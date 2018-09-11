@@ -59,7 +59,7 @@ public class TestApp {
         driver.switchTo().frame(driver.findElement(By.id("bookAnAppointment")));
         driver.findElement(By.xpath("//label[@for='phoneService']")).click();
         driver.findElement(By.name("choosenDatePlaceholder")).click();
-        driver.findElement(By.xpath("//a[text()='4']")).click();
+        driver.findElement(By.xpath("//a[text()='26']")).click();
         Select oSelectTime = new Select(driver.findElement(By.id("choosenTime")));
         oSelectTime.selectByValue("10:00 PM");
         driver.findElement(By.id("name")).sendKeys("Nastya");
