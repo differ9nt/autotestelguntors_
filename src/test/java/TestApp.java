@@ -58,8 +58,14 @@ public class TestApp {
         Thread.sleep(3000);
         driver.switchTo().frame(driver.findElement(By.id("bookAnAppointment")));
         driver.findElement(By.xpath("//label[@for='phoneService']")).click();
+
         driver.findElement(By.name("choosenDatePlaceholder")).click();
-        driver.findElement(By.xpath("//a[text()='26']")).click();
+        while(!driver.findElement(By.cssSelector("[class='ui-datepicker-month']")).getText().contains("November")){
+            driver.findElement(By.cssSelector("[class='ui-icon ui-icon-circle-triangle-e']")).click();
+
+        }
+        driver.findElement(By.xpath("//a[text()='29']")).click();
+
         Select oSelectTime = new Select(driver.findElement(By.id("choosenTime")));
         oSelectTime.selectByValue("10:00 PM");
         driver.findElement(By.id("name")).sendKeys("Nastya");
